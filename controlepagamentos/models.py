@@ -12,9 +12,9 @@ class User(db.Model, UserMixin):
 
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     nome = db.Column(db.String(80), nullable=False)
-    email = db.Column(db.String(100), nullable=False)
+    email = db.Column(db.String(100), nullable=False, unique=True)
     senha = db.Column(db.String, nullable=False)
-    token = db.Column(db.String(50))
+    token = db.Column(db.String(50), nullable=False)
 
 
 class Pagamento(db.Model):
