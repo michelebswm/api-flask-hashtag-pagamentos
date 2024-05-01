@@ -1,4 +1,4 @@
-from controlepagamentos import app, migrate
+from controlepagamentos import app, migrate, login_manager
 
 
 if __name__ == '__main__':

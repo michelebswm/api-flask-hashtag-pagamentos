@@ -1,7 +1,13 @@
-from controlepagamentos import db
+from controlepagamentos import db, login_manager
+from flask_login import UserMixin
 
 
-class User(db.Model):
+@login_manager.user_loader
+def load_usuario(id_usuario):
+    return User.query.get(int(id_usuario))
+
+
+class User(db.Model, UserMixin):
     __tablename__ = "user"
 
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
