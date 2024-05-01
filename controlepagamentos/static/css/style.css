@@ -140,6 +140,20 @@
 	transform: scale(1.05);
 }
 
+.lembrar-acesso {
+	padding: 0 20px;
+	display: flex;
+	flex-direction: row;
+	gap: 5px;
+	justify-content: center;
+}
+
+.label-form-lembrar,
+.link-criar-conta {
+	text-align: center;
+	font-size: 13px;
+}
+
 /* Validações Formulários */
 .text-danger,
 .invalid-feedback {

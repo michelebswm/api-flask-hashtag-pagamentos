@@ -1,3 +1,5 @@
+import smtplib
+
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField, BooleanField
 from wtforms.validators import DataRequired, Length, Email, EqualTo, ValidationError
@@ -16,9 +18,10 @@ class FormCriarUser(FlaskForm):
 
     def validate_email(self, email):
         try:
+            # Use validate_email from email_validator for advanced checks
             validate_email(email.data)
-        except:
-            raise ValidationError(f"E-mail inválido")
+        except (ValueError, smtplib.SMTPException) as e:
+            raise ValidationError(f"E-mail inválido: {str(e)}")
 
         user = User.query.filter_by(email=email.data).first()
         if user:
