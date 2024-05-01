@@ -1,5 +1,84 @@
 {% extends 'base.html' %}
 
 {% block body %}
+<div class="content-form">
+	<form method="POST" action="" class="form">
+        {{ form_criaruser.csrf_token }}
+        <div class="title-form">Criar Conta</div>
+		<div class="item-form">
+			{{ form_criaruser.nome.label(class="label-form") }}
+			{% if form_criaruser.nome.errors %}
+				{{form_criaruser.nome(class="input-form is-invalid") }}
+			<div class="invalid-feedback">
+				{% for erro in form_criaruser.nome.errors %}
+					{{ erro }}
+				{% endfor %}
+			</div>
+			{% else %}
+				{{form_criaruser.nome(class="input-form") }}
+			{% endif %}
+		</div>
+
+		<div class="item-form">
+			{{ form_criaruser.email.label(class="label-form") }}
+			{% if form_criaruser.email.errors %}
+				{{form_criaruser.email(class="input-form is-invalid") }}
+			<div class="invalid-feedback">
+				{% for erro in form_criaruser.email.errors %}
+					{{ erro }}
+				{% endfor %}
+			</div>
+			{% else %}
+				{{form_criaruser.email(class="input-form") }}
+			{% endif %}
+		</div>
+
+		<div class="item-form">
+			{{ form_criaruser.senha.label(class="label-form") }}
+			{% if form_criaruser.senha.errors %}
+				{{form_criaruser.senha(class="input-form is-invalid") }}
+			<div class="invalid-feedback">
+				{% for erro in form_criaruser.senha.errors %}
+					{{ erro }}
+				{% endfor %}
+			</div>
+			{% else %}
+				{{form_criaruser.senha(class="input-form") }}
+			{% endif %}
+		</div>
+
+		<div class="item-form">
+			{{ form_criaruser.confirmacao_senha.label(class="label-form") }}
+			{% if form_criaruser.confirmacao_senha.errors %}
+				{{form_criaruser.confirmacao_senha(class="input-form is-invalid") }}
+			<div class="invalid-feedback">
+				{% for erro in form_criaruser.confirmacao_senha.errors %}
+					{{ erro }}
+				{% endfor %}
+			</div>
+			{% else %}
+				{{form_criaruser.confirmacao_senha(class="input-form") }}
+			{% endif %}
+		</div>
+
+		<div class="item-form">
+			{{ form_criaruser.token.label(class="label-form") }}
+			{% if form_criaruser.token.errors %}
+				{{form_criaruser.token(class="input-form is-invalid") }}
+			<div class="invalid-feedback">
+				{% for erro in form_criaruser.token.errors %}
+					{{ erro }}
+				{% endfor %}
+			</div>
+			{% else %}
+				{{form_criaruser.token(class="input-form") }}
+			{% endif %}
+		</div>
+
+		<div class="item-form">
+			{{ form_criaruser.btn_cadastro(class='btn-form') }}
+		</div>
+    </form>
+</div>
 
 {% endblock %}

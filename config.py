@@ -5,4 +5,4 @@ load_dotenv()
 
 SQLALCHEMY_DATABASE_URI = os.environ.get("SQLALCHEMY_DATABASE_URI")
 SECRET_KEY = os.environ.get("SECRET_KEY")
-
+TOKEN_CREATE = os.environ.get("TOKEN_CREATE")
