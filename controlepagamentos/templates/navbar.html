@@ -3,9 +3,10 @@
     <div class="navbar">
         <a href="{{ url_for('index') }}" class="item-navbar">Home</a>
         {% if current_user.is_authenticated %}
+            <a href="{{ url_for('consultas') }}" class="item-navbar">Consultas</a>
             <a href="{{ url_for('logout') }}" class="item-navbar">Logout</a>
         {% else %}
-             <a href="{{ url_for('login') }}" class="item-navbar">Login</a>
+            <a href="{{ url_for('login') }}" class="item-navbar">Login</a>
             <a href="{{ url_for('cadastro') }}" class="item-navbar">Cadastro</a>
         {% endif %}
     </div>

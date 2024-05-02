@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<div class="content-bar">
+    <div class="title">Listagem de Pagamentos</div>
+
+    <form action="" method="POST">
+        {{ form_pesquisa.csrf_token }}
+        <div class="search-container">
+            {{ form_pesquisa.email(class="input-search") }}
+            {{ form_pesquisa.btn_pesquisar(class="btn-search") }}
+        </div>
+    </form>
+    <button class="btn-refresh">
+        <a href="{{ url_for('consultas') }}">
+            <i class="fa-solid fa-arrows-rotate"></i>
+            Atualizar
+        </a>
+    </button>
+</div>
+<div class="container-list">
+     <table>
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Email</th>
+                <th>Status</th>
+                <th>Valor</th>
+                <th>Forma de Pagto</th>
+                <th>Parcelas</th>
+                <th>Data</th>
+                <th>Acesso ao Curso</th>
+                <th>Msg enviada</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for pag in list_pagamentos %}
+                <tr>
+                    <td>{{ pag.nome}}</td>
+                    <td>{{ pag.email }}</td>
+                    <td>{{ pag.status }}</td>
+                    <td>{{ pag.valor }}</td>
+                    <td>{{ pag.forma_pagamento }}</td>
+                    <td>{{ pag.parcelas }}</td>
+                    <td>{{ pag.data_webhook }}</td>
+                    <td>{{ pag.acesso_curso }}</td>
+                    <td>{{ pag.mensagem_enviada }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+<script src="https://kit.fontawesome.com/1ba32a7e44.js" crossorigin="anonymous"></script>
+{% endblock %}

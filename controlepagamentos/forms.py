@@ -33,3 +33,8 @@ class FormLogin(FlaskForm):
     senha = PasswordField('Senha', validators=[DataRequired(), Length(6, 20)])
     lembrar_dados = BooleanField('Lembrar dados de acesso')
     btn_login = SubmitField('Acessar')
+
+
+class FormPesquisaEmail(FlaskForm):
+    email = StringField('Email', render_kw={"placeholder": "Pesquisar por email ..."})
+    btn_pesquisar = SubmitField('Pesquisar')
