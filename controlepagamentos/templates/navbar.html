@@ -1,13 +1,13 @@
 <header class="header">
     <div class="navbar-title">API Recuperação</div>
     <div class="navbar">
-        <a href="{{ url_for('index') }}" class="item-navbar">Home</a>
+        <a href="{{ url_for('controlepagamentos.index') }}" class="item-navbar">Home</a>
         {% if current_user.is_authenticated %}
-            <a href="{{ url_for('consultas') }}" class="item-navbar">Consultas</a>
-            <a href="{{ url_for('logout') }}" class="item-navbar">Logout</a>
+            <a href="{{ url_for('controlepagamentos.consultas') }}" class="item-navbar">Consultas</a>
+            <a href="{{ url_for('controlepagamentos.logout') }}" class="item-navbar">Logout</a>
         {% else %}
-            <a href="{{ url_for('login') }}" class="item-navbar">Login</a>
-            <a href="{{ url_for('cadastro') }}" class="item-navbar">Cadastro</a>
+            <a href="{{ url_for('controlepagamentos.login') }}" class="item-navbar">Login</a>
+            <a href="{{ url_for('controlepagamentos.cadastro') }}" class="item-navbar">Cadastro</a>
         {% endif %}
     </div>
 </header>
