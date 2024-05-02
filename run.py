@@ -1,4 +1,6 @@
-from controlepagamentos import app, migrate, login_manager, db
+from controlepagamentos import app
 
 
-app = app()
+if __name__ == "__main__":
+    with app.app_context():
+        app.run(debug=True)
