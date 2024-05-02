@@ -14,7 +14,7 @@ login_manager.login_view = 'login'   # Redireciona para a página lgoin que é a
 login_manager.login_message = "Você precisa estar logado para acessar esta página."
 login_manager.login_message_category = 'alert-info'
 
-from controlepagamentos import views
+from controlepagamentos import models, views
 
 
 if __name__ == '__main__':
