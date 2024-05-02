@@ -1,10 +1,11 @@
 import datetime
-from controlepagamentos import app, db, bcrypt, csrf
-from flask import Flask, render_template, url_for, request, flash, redirect, jsonify, abort
+from controlepagamentos import db, bcrypt, csrf
+from flask import current_app,  Flask, render_template, url_for, request, flash, redirect, jsonify, abort
 from flask_login import login_user, logout_user, current_user, login_required
 from controlepagamentos.models import User, Pagamento
 from controlepagamentos.forms import FormLogin, FormCriarUser, FormPesquisaEmail
 
+app = current_app
 
 @app.route("/")
 def index():
